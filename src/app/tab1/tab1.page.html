@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="headerLogo">
+    <ion-card-header>
+      <ion-title>
+        <img src="https://img.icons8.com/plasticine/100/000000/twitter--v2.png"/>
+      </ion-title>
+    </ion-card-header>
+    <ion-card-content style="font-size:25px;color:black">
+      Twitter Tweets
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-item class="page">
+        <ion-input item-start [(ngModel)]="myinput" type="text" placeholder="Search for tweets"></ion-input>
+        <ion-button item-end (click)="searchForTweets()">
+          <ion-icon name="search"></ion-icon>
+          Search
+        </ion-button>
+    </ion-item>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngFor="let item of shownItems">
+      <ion-item>
+        <ion-label text-wrap>
+          <h3 style="color:chartreuse">AuthorID: {{ item.author_id }} Language: {{item.lang}}</h3>
+          <p>{{ item.text }}</p>
+          <p style="color:rgb(58, 46, 163);">Created: {{ item.created_at }}</p>
+          <p style="color:rgb(58, 46, 163);">Source: {{ item.source }}</p>
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ion-content>
+
+

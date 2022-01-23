@@ -1,0 +1,7 @@
+{
+  "name": "TwitterApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
